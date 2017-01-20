@@ -1,0 +1,8 @@
+[package]
+name = "cardgame"
+version = "0.1.0"
+authors = ["Philipe Louchtch <philipelouchtch@outlook.com>"]
+
+[dependencies]
+enum_derive = { git = "https://github.com/DanielKeep/rust-custom-derive" }
+macro-attr = { git = "https://github.com/DanielKeep/rust-custom-derive" }

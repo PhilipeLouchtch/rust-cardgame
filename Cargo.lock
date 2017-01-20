@@ -1,0 +1,21 @@
+[root]
+name = "cardgame"
+version = "0.1.0"
+dependencies = [
+ "enum_derive 0.1.7 (git+https://github.com/DanielKeep/rust-custom-derive)",
+ "macro-attr 0.2.1 (git+https://github.com/DanielKeep/rust-custom-derive)",
+]
+
+[[package]]
+name = "enum_derive"
+version = "0.1.7"
+source = "git+https://github.com/DanielKeep/rust-custom-derive#1252f258cdb9b7c9867f937c52c2f5c0e69a9c03"
+
+[[package]]
+name = "macro-attr"
+version = "0.2.1"
+source = "git+https://github.com/DanielKeep/rust-custom-derive#1252f258cdb9b7c9867f937c52c2f5c0e69a9c03"
+
+[metadata]
+"checksum enum_derive 0.1.7 (git+https://github.com/DanielKeep/rust-custom-derive)" = "<none>"
+"checksum macro-attr 0.2.1 (git+https://github.com/DanielKeep/rust-custom-derive)" = "<none>"
