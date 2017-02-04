@@ -10,7 +10,12 @@ fn main() {
 
     // println!("{:?}", ace_of_spades);
     
-    for i in 1..100000 {
-        let card_deck = carddeck::CardDeck::new();
-    }
+    // for i in 1..100000 {
+        // let card_deck = carddeck::CardDeck::new();
+    // }
+
+    let mut card_deck = carddeck::CardDeck::new();
+    
+    println!("{:?}", card_deck);
+    println!("{:?}", card_deck.drawTopCard());
 }

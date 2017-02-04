@@ -19,4 +19,8 @@ impl CardDeck {
 
         CardDeck{ cards: vec_cards }
     }
+
+    pub fn drawTopCard(&mut self) -> Option<card::Card> {
+        self.cards.pop()
+    }
 }
