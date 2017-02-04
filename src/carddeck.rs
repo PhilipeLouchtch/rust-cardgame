@@ -2,13 +2,8 @@ use card;
 use std::collections::HashMap;
 
 #[derive(Debug)]
-struct Private {
-    deck: Vec<card::Card>,
-}
-
-#[derive(Debug)]
 pub struct CardDeck {
-    private: Private,
+    cards: Vec<card::Card>,
 }
 
 impl<'a> CardDeck {
@@ -22,6 +17,6 @@ impl<'a> CardDeck {
             }
         }
 
-        CardDeck{ private: Private { deck: vec_cards } }
+        CardDeck{ cards: vec_cards }
     }
 }
