@@ -6,7 +6,7 @@ pub struct CardDeck {
     cards: Vec<card::Card>,
 }
 
-impl<'a> CardDeck {
+impl CardDeck {
     pub fn new() -> CardDeck {
 
         let mut vec_cards = Vec::with_capacity(52);
