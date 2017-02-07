@@ -1,5 +1,4 @@
 use card;
-use std::collections::HashMap;
 
 #[derive(Debug)]
 pub struct CardDeck {

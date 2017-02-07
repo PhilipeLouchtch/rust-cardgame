@@ -1,8 +1,3 @@
-use std::collections::HashMap;
-use std::hash::Hash;
-use std::hash::Hasher;
-
-
 #[derive(Debug)]
 pub struct Card {
     suit: Suit,
