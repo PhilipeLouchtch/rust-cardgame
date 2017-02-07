@@ -4,18 +4,19 @@
 mod card;
 mod carddeck;
 
-fn main() {
-    // println!("{:?}", Rank);
-    // let ace_of_spades = card::Card::of(card::Suit::Spades, card::Rank::Ace);
-
-    // println!("{:?}", ace_of_spades);
-    
-    // for i in 1..100000 {
-        // let card_deck = carddeck::CardDeck::new();
-    // }
-
+// A function for testing the creation and popping of deck
+fn make_deck_and_print() {
     let mut card_deck = carddeck::CardDeck::new();
     
     println!("{:?}", card_deck);
-    println!("{:?}", card_deck.drawTopCard());
+    loop {
+        match card_deck.drawTopCard() {
+            Some(card) => println!("{:?}", card),
+            None => break,
+        }
+    }
+}
+
+fn main() {
+    make_deck_and_print();
 }
