@@ -7,13 +7,10 @@ mod carddeck;
 // A function for testing the creation and popping of deck
 fn make_deck_and_print() {
     let mut card_deck = carddeck::CardDeck::new();
-    
     println!("{:?}", card_deck);
-    loop {
-        match card_deck.drawTopCard() {
-            Some(card) => println!("{:?}", card),
-            None => break,
-        }
+    
+    while let Some(card) = card_deck.drawTopCard() {
+        println!("{:?}", card);
     }
 }
 
