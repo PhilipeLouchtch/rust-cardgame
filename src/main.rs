@@ -3,17 +3,33 @@
 
 mod card;
 mod carddeck;
+mod hand;
 
 // A function for testing the creation and popping of deck
 fn make_deck_and_print() {
     let mut card_deck = carddeck::CardDeck::new();
     println!("{:?}", card_deck);
-    
+
     while let Some(card) = card_deck.drawTopCard() {
         println!("{:?}", card);
     }
 }
 
+fn make_deck_and_take_hand() {
+    let mut card_deck = carddeck::CardDeck::new();
+
+    let mut hand = hand::Hand::new();
+
+    for _ in 0..2 {
+        match card_deck.drawTopCard() {
+            Some(card) => hand.accept(card),
+            None => panic!("Deck contained insufficient cards to draw a hand"),
+        }
+    }
+
+    print!("Hand: {:?}", hand);
+}
+
 fn main() {
-    make_deck_and_print();
+    make_deck_and_take_hand();
 }
