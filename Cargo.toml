@@ -4,5 +4,6 @@ version = "0.1.0"
 authors = ["Philipe Louchtch <philipelouchtch@outlook.com>"]
 
 [dependencies]
+rand = "0.3.15"
 enum_derive = { git = "https://github.com/DanielKeep/rust-custom-derive" }
 macro-attr = { git = "https://github.com/DanielKeep/rust-custom-derive" }

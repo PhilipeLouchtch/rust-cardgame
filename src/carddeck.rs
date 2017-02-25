@@ -1,4 +1,5 @@
 use card;
+use vecshuffle::Shufflable;
 
 #[derive(Debug)]
 pub struct CardDeck {
@@ -16,10 +17,11 @@ impl CardDeck {
             }
         }
 
+        vec_cards.shuffle();
         CardDeck{ cards: vec_cards }
     }
 
-    pub fn drawTopCard(&mut self) -> Option<card::Card> {
+    pub fn draw_card(&mut self) -> Option<card::Card> {
         self.cards.pop()
     }
 }
