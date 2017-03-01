@@ -6,6 +6,7 @@ mod card;
 mod carddeck;
 mod hand;
 mod vecshuffle;
+mod board;
 
 // A function for testing the creation and popping of deck
 fn make_deck_and_print() {
@@ -19,7 +20,6 @@ fn make_deck_and_print() {
 
 fn make_deck_and_take_hand() {
     let mut card_deck = carddeck::CardDeck::new();
-
     let mut hand = hand::Hand::new();
 
     for _ in 0..2 {
@@ -32,6 +32,13 @@ fn make_deck_and_take_hand() {
     print!("Hand: {:#?}", hand);
 }
 
+fn make_deck_and_deal_board() {
+    let card_deck = carddeck::CardDeck::new();
+    let board = board::Board::draw_from(card_deck, 5);
+
+    print!("{:?}", board);
+}
+
 fn main() {
-    make_deck_and_take_hand();
+    make_deck_and_deal_board();
 }
