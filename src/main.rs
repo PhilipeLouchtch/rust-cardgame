@@ -2,11 +2,11 @@
 #[macro_use] extern crate enum_derive;
 extern crate rand;
 
-mod card;
-mod carddeck;
-mod hand;
-mod vecshuffle;
-mod board;
+mod gamelogic;
+
+use gamelogic::carddeck;
+use gamelogic::hand;
+use gamelogic::board;
 
 // A function for testing the creation and popping of deck
 fn make_deck_and_print() {

@@ -1,6 +1,6 @@
-use card;
-use card::Card;
-use vecshuffle::Shufflable;
+use gamelogic::card;
+use gamelogic::card::Card;
+use gamelogic::vecshuffle::Shufflable;
 
 #[derive(Debug)]
 pub struct CardDeck {

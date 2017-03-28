@@ -1,5 +1,5 @@
-use card::Card;
-use carddeck::CardDeck;
+use gamelogic::card::Card;
+use gamelogic::carddeck::CardDeck;
 
 #[derive(Debug)]
 pub struct Board {
