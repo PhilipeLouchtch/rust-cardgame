@@ -25,4 +25,12 @@ impl CardDeck {
     pub fn draw_card(&mut self) -> Option<Card> {
         self.cards.pop()
     }
+
+    pub fn return_card(&mut self, card_to_return: Card) {
+        self.cards.push(card_to_return);
+    }
+
+    pub fn reshuffle(&mut self) {
+        self.cards.shuffle();
+    }
 }

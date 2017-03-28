@@ -7,7 +7,7 @@ pub struct Board {
 }
 
 impl Board {
-    pub fn draw_from(mut deck: CardDeck, number_cards_to_draw: usize) -> Board {
+    pub fn draw_from(deck: &mut CardDeck, number_cards_to_draw: usize) -> Board {
         let mut cards = Vec::with_capacity(number_cards_to_draw);
 
         for _ in 0..number_cards_to_draw {

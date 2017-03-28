@@ -22,23 +22,31 @@ fn make_deck_and_take_hand() {
     let mut card_deck = carddeck::CardDeck::new();
     let mut hand = hand::Hand::new();
 
-    for _ in 0..2 {
-        match card_deck.draw_card() {
-            Some(card) => hand.accept(card),
-            None => panic!("Deck contained insufficient cards to draw a hand"),
-        }
-    }
+    hand.draw_from(&mut card_deck, 2);
 
     print!("Hand: {:#?}", hand);
 }
 
 fn make_deck_and_deal_board() {
-    let card_deck = carddeck::CardDeck::new();
-    let board = board::Board::draw_from(card_deck, 5);
+    let mut card_deck = carddeck::CardDeck::new();
+    let board = board::Board::draw_from(&mut card_deck, 5);
 
     print!("{:?}", board);
+    print!("{:?}", card_deck);
+}
+
+fn make_deck_draw_hand_and_return_to_deck() {
+    let mut card_deck = carddeck::CardDeck::new();
+    
+    let mut hand = hand::Hand::new();
+    hand.draw_from(&mut card_deck, 2);
+
+    card_deck.return_card(hand.card(0));
 }
 
 fn main() {
+    make_deck_and_print();
+    make_deck_and_take_hand();
     make_deck_and_deal_board();
+    make_deck_draw_hand_and_return_to_deck();
 }
