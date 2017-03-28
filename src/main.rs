@@ -3,6 +3,7 @@
 extern crate rand;
 
 mod gamelogic;
+mod handdetermination;
 
 use gamelogic::carddeck;
 use gamelogic::hand;
@@ -24,15 +25,15 @@ fn make_deck_and_take_hand() {
 
     hand.draw_from(&mut card_deck, 2);
 
-    print!("Hand: {:#?}", hand);
+    println!("Hand: {:#?}", hand);
 }
 
 fn make_deck_and_deal_board() {
     let mut card_deck = carddeck::CardDeck::new();
     let board = board::Board::draw_from(&mut card_deck, 5);
 
-    print!("{:?}", board);
-    print!("{:?}", card_deck);
+    println!("{:?}", board);
+    println!("{:?}", card_deck);
 }
 
 fn make_deck_draw_hand_and_return_to_deck() {
@@ -44,9 +45,24 @@ fn make_deck_draw_hand_and_return_to_deck() {
     card_deck.return_card(hand.card(0));
 }
 
+fn determine_winner_from_two_hands() {
+    let mut card_deck = carddeck::CardDeck::new();
+    
+    let mut villain_hand = hand::Hand::new();
+    villain_hand.draw_from(&mut card_deck, 2);
+
+    let mut hero_hand = hand::Hand::new();
+    hero_hand.draw_from(&mut card_deck, 2);
+
+    let winner = handdetermination::determine_winning_hand(hero_hand, villain_hand);
+
+    print!("winner: {:?}", winner);
+}
+
 fn main() {
     make_deck_and_print();
     make_deck_and_take_hand();
     make_deck_and_deal_board();
     make_deck_draw_hand_and_return_to_deck();
+    determine_winner_from_two_hands();
 }
